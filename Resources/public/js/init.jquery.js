@@ -62,6 +62,11 @@ function initTinyMCE(options) {
                         });
                     }
                 };
+                if (options.extras) {
+                    Object.keys(options.extras).forEach(function (key) {
+                        settings[key] = options.extras[key];
+                    });
+                }
                 textarea.tinymce(settings);
             });
         });
