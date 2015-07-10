@@ -98,6 +98,11 @@ function initTinyMCE(options) {
                     }
                 }
             }
+            if (options.extras) {
+                Object.keys(options.extras).forEach(function (key) {
+                    settings[key] = options.extras[key];
+                });
+            }
             // Initialize textarea by its ID attribute
             tinymce
                 .createEditor(textareas[i].getAttribute('id'), settings)
